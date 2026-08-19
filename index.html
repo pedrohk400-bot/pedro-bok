@@ -1,1 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#B00020">
 
+<title>PEDRO BOK</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    Arial,
+    sans-serif;
+
+    background:
+    radial-gradient(
+        circle at 10% 0%,
+        rgba(255,60,80,.20),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 100% 30%,
+        rgba(255,120,120,.12),
+        transparent 30%
+    ),
+    #f2f2f7;
+
+    color:#1c1c1e;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+.header{
+    background:
+    linear-gradient(
+        145deg,
+        #D50000,
+        #B00020,
+        #7F0015
+    );
+
+    color:white;
+
+    padding:
+    28px 20px 75px;
+
+    border-radius:
+    0 0 40px 40px;
+
+    box-shadow:
+    0 18px 45px
+    rgba(176,0,32,.32);
+}
+
+.header-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    width:62px;
+    height:62px;
+
+    border-radius:21px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    rgba(255,255,255,.16);
+
+    border:
+    1px solid
+    rgba(255,255,255,.35);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+    inset 0 1px 2px
+    rgba(255,255,255,.35),
+
+    0 8px 25px
+    rgba(0,0,0,.18);
+}
+
+.logo span{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.badge{
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.16);
+
+    border:
+    1px solid
+    rgba(255,255,255,.30);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.header h1{
+    margin-top:21px;
+
+    font-size:32px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.header p{
+    margin-top:8px;
+
+    font-size:14px;
+
+    opacity:.9;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:720px;
+
+    margin:-34px auto 30px;
+
+    padding:0 16px;
+
+    position:relative;
+}
+
+/* WELCOME */
+
+.welcome{
+    background:
+    rgba(255,255,255,.90);
+
+    border:
+    1px solid
+    rgba(255,255,255,.95);
+
+    border-radius:28px;
+
+    padding:22px;
+
+    box-shadow:
+    0 12px 35px
+    rgba(0,0,0,.08);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.welcome-icon{
+    width:58px;
+    height:58px;
+
+    margin:0 auto 12px;
+
+    border-radius:19px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        145deg,
+        #D50000,
+        #9E001B
+    );
+
+    color:white;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    box-shadow:
+    0 8px 20px
+    rgba(176,0,32,.25);
+}
+
+.welcome h2{
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.welcome p{
+    color:#8e8e93;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* SECTION */
+
+.section-title{
+    font-size:23px;
+    font-weight:900;
+
+    margin:
+    27px 5px 7px;
+}
+
+.section-subtitle{
+    color:#8e8e93;
+
+    font-size:13px;
+
+    margin:
+    0 5px 16px;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:14px;
+}
+
+.service{
+    background:
+    rgba(255,255,255,.94);
+
+    border:
+    1px solid
+    rgba(255,255,255,.95);
+
+    border-radius:26px;
+
+    padding:19px 15px;
+
+    box-shadow:
+    0 9px 28px
+    rgba(0,0,0,.07);
+
+    transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+
+    cursor:pointer;
+}
+
+.service:active{
+    transform:scale(.95);
+
+    box-shadow:
+    0 4px 15px
+    rgba(0,0,0,.08);
+}
+
+.service-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        145deg,
+        #FFE5E8,
+        #FFD1D6
+    );
+
+    color:#B00020;
+
+    font-size:25px;
+
+    margin-bottom:14px;
+}
+
+.service h3{
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.service p{
+    color:#8e8e93;
+    font-size:12px;
+    line-height:1.5;
+}
+
+/* ACCOUNT CARD */
+
+.account-card{
+    margin-top:16px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #B00020,
+        #850018
+    );
+
+    color:white;
+
+    border-radius:28px;
+
+    padding:22px;
+
+    box-shadow:
+    0 14px 35px
+    rgba(176,0,32,.25);
+}
+
+.account-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.account-icon{
+    width:52px;
+    height:52px;
+
+    border-radius:17px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+}
+
+.account-card h3{
+    font-size:18px;
+}
+
+.account-card p{
+    margin-top:5px;
+
+    font-size:12px;
+
+    opacity:.8;
+}
+
+.price{
+    display:flex;
+
+    align-items:end;
+    gap:5px;
+
+    margin-top:20px;
+}
+
+.price strong{
+    font-size:29px;
+    font-weight:900;
+}
+
+.price span{
+    font-size:12px;
+    opacity:.8;
+    margin-bottom:5px;
+}
+
+.order-btn{
+    display:block;
+
+    text-align:center;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border-radius:17px;
+
+    background:white;
+
+    color:#B00020;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    transition:
+    transform .18s ease;
+}
+
+.order-btn:active{
+    transform:scale(.97);
+}
+
+/* RECHARGE */
+
+.recharge-list{
+    display:grid;
+    gap:12px;
+}
+
+.recharge{
+    background:
+    rgba(255,255,255,.95);
+
+    border-radius:22px;
+
+    padding:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    box-shadow:
+    0 7px 22px
+    rgba(0,0,0,.06);
+}
+
+.recharge-icon{
+    width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#FFE5E8;
+
+    color:#B00020;
+
+    font-size:21px;
+
+    flex-shrink:0;
+}
+
+.recharge-info{
+    flex:1;
+}
+
+.recharge-info small{
+    display:block;
+
+    color:#8e8e93;
+
+    font-size:11px;
+
+    margin-bottom:3px;
+}
+
+.recharge-info strong{
+    font-size:15px;
+}
+
+.recharge-price{
+    text-align:left;
+}
+
+.recharge-price strong{
+    display:block;
+
+    color:#B00020;
+
+    font-size:16px;
+}
+
+.recharge-price span{
+    color:#8e8e93;
+
+    font-size:10px;
+}
+
+/* TELEGRAM */
+
+.telegram{
+    margin-top:28px;
+
+    background:
+    #1c1c1e;
+
+    color:white;
+
+    border-radius:29px;
+
+    padding:24px;
+
+    box-shadow:
+    0 13px 35px
+    rgba(0,0,0,.18);
+}
+
+.telegram h2{
+    font-size:20px;
+    margin-bottom:7px;
+}
+
+.telegram p{
+    color:#b9b9bd;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin-bottom:17px;
+}
+
+.telegram-btn{
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+        135deg,
+        #D50000,
+        #A0001C
+    );
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    box-shadow:
+    0 8px 20px
+    rgba(176,0,32,.28);
+
+    transition:
+    transform .18s ease;
+}
+
+.telegram-btn:active{
+    transform:scale(.97);
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+
+    color:#8e8e93;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    padding:28px 10px;
+}
+
+/* DESKTOP */
+
+@media(min-width:600px){
+
+    .services{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+}
+
+/* REDUCE MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+        scroll-behavior:auto !important;
+        transition:none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="header-top">
+
+        <div class="badge">
+            PEDRO BOK
+        </div>
+
+        <div class="logo">
+            <span>BOK</span>
+        </div>
+
+    </div>
+
+    <h1>PEDRO BOK</h1>
+
+    <p>
+        خدمات الحسابات وشحن الرصيد
+    </p>
+
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+
+        <div class="welcome-icon">
+            ₱
+        </div>
+
+        <h2>
+            أهلاً بك في PEDRO BOK
+        </h2>
+
+        <p>
+            اختر الخدمة التي تريدها، ثم أرسل طلبك
+            مباشرة إلى فريق PEDRO.
+        </p>
+
+    </section>
+
+
+    <h2 class="section-title">
+        الخدمات
+    </h2>
+
+    <p class="section-subtitle">
+        اختر الخدمة المناسبة لك
+    </p>
+
+
+    <div class="services">
+
+        <div class="service" onclick="openTelegram('فتح حساب جديد')">
+
+            <div class="service-icon">
+                👤
+            </div>
+
+            <h3>
+                فتح حساب جديد
+            </h3>
+
+            <p>
+                إنشاء حساب جديد في الخدمة
+            </p>
+
+        </div>
+
+
+        <div class="service" onclick="scrollToRecharge()">
+
+            <div class="service-icon">
+                💳
+            </div>
+
+            <h3>
+                شحن الرصيد
+            </h3>
+
+            <p>
+                اختر قيمة الرصيد المطلوبة
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">
+        فتح حساب جديد
+    </h2>
+
+    <p class="section-subtitle">
+        رسوم إنشاء الحساب
+    </p>
+
+
+    <div class="account-card">
+
+        <div class="account-top">
+
+            <div class="account-icon">
+                👤
+            </div>
+
+            <div>
+
+                <h3>
+                    حساب PEDRO BOK
+                </h3>
+
+                <p>
+                    فتح حساب جديد
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="price">
+
+            <strong>
+                15,000
+            </strong>
+
+            <span>
+                جنيه سوداني
+            </span>
+
+        </div>
+
+
+        <a
+            class="order-btn"
+            href="https://t.me/PEDRO_DARKk"
+            target="_blank"
+            rel="noopener">
+
+            طلب فتح الحساب
+
+        </a>
+
+    </div>
+
+
+    <h2
+        id="recharge"
+        class="section-title">
+
+        شحن الرصيد
+    </h2>
+
+    <p class="section-subtitle">
+        اختر قيمة الرصيد المطلوبة
+    </p>
+
+
+    <div class="recharge-list">
+
+
+        <div
+            class="recharge"
+            onclick="openTelegram('شحن 100,000')">
+
+            <div class="recharge-icon">
+                💰
+            </div>
+
+            <div class="recharge-info">
+
+                <small>
+                    قيمة الرصيد
+                </small>
+
+                <strong>
+                    100,000 جنيه
+                </strong>
+
+            </div>
+
+            <div class="recharge-price">
+
+                <strong>
+                    10,000
+                </strong>
+
+                <span>
+                    سعر الشحن
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="recharge"
+            onclick="openTelegram('شحن 250,000')">
+
+            <div class="recharge-icon">
+                💰
+            </div>
+
+            <div class="recharge-info">
+
+                <small>
+                    قيمة الرصيد
+                </small>
+
+                <strong>
+                    250,000 جنيه
+                </strong>
+
+            </div>
+
+            <div class="recharge-price">
+
+                <strong>
+                    25,000
+                </strong>
+
+                <span>
+                    سعر الشحن
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="recharge"
+            onclick="openTelegram('شحن 500,000')">
+
+            <div class="recharge-icon">
+                💰
+            </div>
+
+            <div class="recharge-info">
+
+                <small>
+                    قيمة الرصيد
+                </small>
+
+                <strong>
+                    500,000 جنيه
+                </strong>
+
+            </div>
+
+            <div class="recharge-price">
+
+                <strong>
+                    50,000
+                </strong>
+
+                <span>
+                    سعر الشحن
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="recharge"
+            onclick="openTelegram('شحن 750,000')">
+
+            <div class="recharge-icon">
+                💰
+            </div>
+
+            <div class="recharge-info">
+
+                <small>
+                    قيمة الرصيد
+                </small>
+
+                <strong>
+                    750,000 جنيه
+                </strong>
+
+            </div>
+
+            <div class="recharge-price">
+
+                <strong>
+                    75,000
+                </strong>
+
+                <span>
+                    سعر الشحن
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="recharge"
+            onclick="openTelegram('شحن 1,000,000')">
+
+            <div class="recharge-icon">
+                💰
+            </div>
+
+            <div class="recharge-info">
+
+                <small>
+                    قيمة الرصيد
+                </small>
+
+                <strong>
+                    1,000,000 جنيه
+                </strong>
+
+            </div>
+
+            <div class="recharge-price">
+
+                <strong>
+                    100,000
+                </strong>
+
+                <span>
+                    سعر الشحن
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <section class="telegram">
+
+        <h2>
+            تواصل مع PEDRO
+        </h2>
+
+        <p>
+            بعد اختيار الخدمة، سيتم تحويلك إلى
+            Telegram لإرسال طلبك مباشرة.
+        </p>
+
+        <a
+            class="telegram-btn"
+            href="https://t.me/PEDRO_DARKk"
+            target="_blank"
+            rel="noopener">
+
+            ✈️ التواصل عبر Telegram
+
+        </a>
+
+    </section>
+
+
+    <footer class="footer">
+
+        © 2026 PEDRO BOK
+
+        <br>
+
+        جميع الحقوق محفوظة
+
+    </footer>
+
+</main>
+
+
+<script>
+
+function openTelegram(service){
+
+    var message =
+        "مرحباً PEDRO 👋%0A%0A" +
+        "أريد طلب خدمة: " +
+        encodeURIComponent(service);
+
+    window.open(
+        "https://t.me/PEDRO_DARKk?text=" + message,
+        "_blank"
+    );
+}
+
+
+function scrollToRecharge(){
+
+    var section =
+        document.getElementById("recharge");
+
+    if(section){
+
+        section.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+
+}
+
+</script>
+
+</body>
+  </html>
