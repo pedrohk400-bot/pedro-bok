@@ -2,1024 +2,543 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#B00020">
-
-<title>PEDRO BOK</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SocialX</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    -webkit-tap-highlight-color:transparent;
-}
-
+*{box-sizing:border-box;margin:0}
 body{
-    font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "SF Pro Text",
-    Arial,
-    sans-serif;
+font-family:Arial,sans-serif;
+background:#080b12;color:#fff
+}
+button,input{font-family:inherit}
 
-    background:
-    radial-gradient(
-        circle at 10% 0%,
-        rgba(255,60,80,.20),
-        transparent 30%
-    ),
-    radial-gradient(
-        circle at 100% 30%,
-        rgba(255,120,120,.12),
-        transparent 30%
-    ),
-    #f2f2f7;
-
-    color:#1c1c1e;
-    min-height:100vh;
+.login{
+height:100vh;display:grid;place-items:center;padding:20px
 }
 
-/* HEADER */
-
-.header{
-    background:
-    linear-gradient(
-        145deg,
-        #D50000,
-        #B00020,
-        #7F0015
-    );
-
-    color:white;
-
-    padding:
-    28px 20px 75px;
-
-    border-radius:
-    0 0 40px 40px;
-
-    box-shadow:
-    0 18px 45px
-    rgba(176,0,32,.32);
-}
-
-.header-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.box{
+width:100%;max-width:390px;
+background:#111722;
+border:1px solid #242d3d;
+border-radius:28px;
+padding:35px 25px;
+text-align:center;
+box-shadow:0 20px 70px #0008
 }
 
 .logo{
-    width:62px;
-    height:62px;
-
-    border-radius:21px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-    rgba(255,255,255,.16);
-
-    border:
-    1px solid
-    rgba(255,255,255,.35);
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    box-shadow:
-    inset 0 1px 2px
-    rgba(255,255,255,.35),
-
-    0 8px 25px
-    rgba(0,0,0,.18);
+font-size:38px;font-weight:bold;
+margin-bottom:8px
 }
 
-.logo span{
-    font-size:22px;
-    font-weight:900;
-    letter-spacing:-1px;
+.sub{
+color:#8993a5;
+margin-bottom:30px
 }
 
-.badge{
-    padding:8px 14px;
-
-    border-radius:30px;
-
-    background:
-    rgba(255,255,255,.16);
-
-    border:
-    1px solid
-    rgba(255,255,255,.30);
-
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-
-    font-size:11px;
-    font-weight:700;
+.google{
+width:100%;padding:15px;
+border:0;border-radius:15px;
+background:white;color:#111;
+font-size:16px;font-weight:bold;
+cursor:pointer
 }
 
-.header h1{
-    margin-top:21px;
+.app{display:none;min-height:100vh}
 
-    font-size:32px;
-    font-weight:900;
-    letter-spacing:-1px;
+.top{
+height:70px;padding:10px 18px;
+display:flex;align-items:center;
+justify-content:space-between;
+border-bottom:1px solid #202938;
+background:#0c1018
 }
 
-.header p{
-    margin-top:8px;
-
-    font-size:14px;
-
-    opacity:.9;
+.me{
+display:flex;align-items:center;gap:10px
 }
 
-/* CONTAINER */
-
-.container{
-    max-width:720px;
-
-    margin:-34px auto 30px;
-
-    padding:0 16px;
-
-    position:relative;
+.avatar{
+width:43px;height:43px;
+border-radius:50%;
+object-fit:cover;
+background:#222
 }
 
-/* WELCOME */
-
-.welcome{
-    background:
-    rgba(255,255,255,.90);
-
-    border:
-    1px solid
-    rgba(255,255,255,.95);
-
-    border-radius:28px;
-
-    padding:22px;
-
-    box-shadow:
-    0 12px 35px
-    rgba(0,0,0,.08);
-
-    backdrop-filter:blur(25px);
-    -webkit-backdrop-filter:blur(25px);
-
-    text-align:center;
-
-    margin-bottom:25px;
+.logout{
+border:0;background:#191f2b;
+color:#fff;padding:10px 14px;
+border-radius:12px;cursor:pointer
 }
 
-.welcome-icon{
-    width:58px;
-    height:58px;
-
-    margin:0 auto 12px;
-
-    border-radius:19px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-    linear-gradient(
-        145deg,
-        #D50000,
-        #9E001B
-    );
-
-    color:white;
-
-    font-size:25px;
-
-    font-weight:900;
-
-    box-shadow:
-    0 8px 20px
-    rgba(176,0,32,.25);
+.content{
+max-width:900px;
+margin:auto;padding:20px
 }
 
-.welcome h2{
-    font-size:20px;
-    margin-bottom:7px;
+.search{
+width:100%;
+padding:15px 18px;
+border-radius:16px;
+border:1px solid #273142;
+background:#111722;
+color:#fff;
+outline:none;
+margin-bottom:18px
 }
 
-.welcome p{
-    color:#8e8e93;
-    font-size:13px;
-    line-height:1.7;
+.section{
+font-size:20px;
+font-weight:bold;
+margin-bottom:14px
 }
 
-/* SECTION */
-
-.section-title{
-    font-size:23px;
-    font-weight:900;
-
-    margin:
-    27px 5px 7px;
+.person{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#111722;
+border:1px solid #202938;
+padding:13px;
+border-radius:18px;
+margin-bottom:10px
 }
 
-.section-subtitle{
-    color:#8e8e93;
-
-    font-size:13px;
-
-    margin:
-    0 5px 16px;
+.personInfo{
+display:flex;
+align-items:center;
+gap:10px
 }
 
-/* SERVICES */
-
-.services{
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:14px;
+.chatBtn{
+border:0;
+background:#2563eb;
+color:white;
+padding:9px 14px;
+border-radius:12px;
+cursor:pointer
 }
 
-.service{
-    background:
-    rgba(255,255,255,.94);
-
-    border:
-    1px solid
-    rgba(255,255,255,.95);
-
-    border-radius:26px;
-
-    padding:19px 15px;
-
-    box-shadow:
-    0 9px 28px
-    rgba(0,0,0,.07);
-
-    transition:
-    transform .18s ease,
-    box-shadow .18s ease;
-
-    cursor:pointer;
+.chat{
+display:none;
+position:fixed;
+inset:0;
+background:#080b12;
+z-index:10;
+flex-direction:column
 }
 
-.service:active{
-    transform:scale(.95);
-
-    box-shadow:
-    0 4px 15px
-    rgba(0,0,0,.08);
+.chatTop{
+height:70px;
+display:flex;
+align-items:center;
+gap:12px;
+padding:10px 15px;
+border-bottom:1px solid #202938
 }
 
-.service-icon{
-    width:55px;
-    height:55px;
-
-    border-radius:18px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-    linear-gradient(
-        145deg,
-        #FFE5E8,
-        #FFD1D6
-    );
-
-    color:#B00020;
-
-    font-size:25px;
-
-    margin-bottom:14px;
+.back{
+border:0;
+background:#191f2b;
+color:#fff;
+padding:9px 13px;
+border-radius:12px;
+cursor:pointer
 }
 
-.service h3{
-    font-size:16px;
-    margin-bottom:6px;
+.msgs{
+flex:1;
+overflow:auto;
+padding:20px
 }
 
-.service p{
-    color:#8e8e93;
-    font-size:12px;
-    line-height:1.5;
+.msg{
+max-width:75%;
+width:max-content;
+padding:11px 15px;
+border-radius:18px;
+background:#182130;
+margin:8px 0
 }
 
-/* ACCOUNT CARD */
-
-.account-card{
-    margin-top:16px;
-
-    background:
-    linear-gradient(
-        145deg,
-        #B00020,
-        #850018
-    );
-
-    color:white;
-
-    border-radius:28px;
-
-    padding:22px;
-
-    box-shadow:
-    0 14px 35px
-    rgba(176,0,32,.25);
+.mine{
+margin-right:auto;
+background:#2563eb
 }
 
-.account-top{
-    display:flex;
-    align-items:center;
-    gap:14px;
+.send{
+display:flex;
+gap:8px;
+padding:12px;
+border-top:1px solid #202938
 }
 
-.account-icon{
-    width:52px;
-    height:52px;
-
-    border-radius:17px;
-
-    background:
-    rgba(255,255,255,.15);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:24px;
+.send input{
+flex:1;
+padding:14px;
+border:0;
+outline:none;
+border-radius:15px;
+background:#111722;
+color:#fff
 }
 
-.account-card h3{
-    font-size:18px;
-}
-
-.account-card p{
-    margin-top:5px;
-
-    font-size:12px;
-
-    opacity:.8;
-}
-
-.price{
-    display:flex;
-
-    align-items:end;
-    gap:5px;
-
-    margin-top:20px;
-}
-
-.price strong{
-    font-size:29px;
-    font-weight:900;
-}
-
-.price span{
-    font-size:12px;
-    opacity:.8;
-    margin-bottom:5px;
-}
-
-.order-btn{
-    display:block;
-
-    text-align:center;
-
-    margin-top:18px;
-
-    padding:14px;
-
-    border-radius:17px;
-
-    background:white;
-
-    color:#B00020;
-
-    text-decoration:none;
-
-    font-size:14px;
-
-    font-weight:800;
-
-    transition:
-    transform .18s ease;
-}
-
-.order-btn:active{
-    transform:scale(.97);
-}
-
-/* RECHARGE */
-
-.recharge-list{
-    display:grid;
-    gap:12px;
-}
-
-.recharge{
-    background:
-    rgba(255,255,255,.95);
-
-    border-radius:22px;
-
-    padding:15px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
-
-    box-shadow:
-    0 7px 22px
-    rgba(0,0,0,.06);
-}
-
-.recharge-icon{
-    width:48px;
-    height:48px;
-
-    border-radius:16px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#FFE5E8;
-
-    color:#B00020;
-
-    font-size:21px;
-
-    flex-shrink:0;
-}
-
-.recharge-info{
-    flex:1;
-}
-
-.recharge-info small{
-    display:block;
-
-    color:#8e8e93;
-
-    font-size:11px;
-
-    margin-bottom:3px;
-}
-
-.recharge-info strong{
-    font-size:15px;
-}
-
-.recharge-price{
-    text-align:left;
-}
-
-.recharge-price strong{
-    display:block;
-
-    color:#B00020;
-
-    font-size:16px;
-}
-
-.recharge-price span{
-    color:#8e8e93;
-
-    font-size:10px;
-}
-
-/* TELEGRAM */
-
-.telegram{
-    margin-top:28px;
-
-    background:
-    #1c1c1e;
-
-    color:white;
-
-    border-radius:29px;
-
-    padding:24px;
-
-    box-shadow:
-    0 13px 35px
-    rgba(0,0,0,.18);
-}
-
-.telegram h2{
-    font-size:20px;
-    margin-bottom:7px;
-}
-
-.telegram p{
-    color:#b9b9bd;
-
-    font-size:13px;
-
-    line-height:1.6;
-
-    margin-bottom:17px;
-}
-
-.telegram-btn{
-    display:block;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    background:
-    linear-gradient(
-        135deg,
-        #D50000,
-        #A0001C
-    );
-
-    color:white;
-
-    padding:15px;
-
-    border-radius:18px;
-
-    font-size:15px;
-
-    font-weight:800;
-
-    box-shadow:
-    0 8px 20px
-    rgba(176,0,32,.28);
-
-    transition:
-    transform .18s ease;
-}
-
-.telegram-btn:active{
-    transform:scale(.97);
-}
-
-/* FOOTER */
-
-.footer{
-    text-align:center;
-
-    color:#8e8e93;
-
-    font-size:11px;
-
-    line-height:1.8;
-
-    padding:28px 10px;
-}
-
-/* DESKTOP */
-
-@media(min-width:600px){
-
-    .services{
-        grid-template-columns:
-        repeat(3,1fr);
-    }
-}
-
-/* REDUCE MOTION */
-
-@media(prefers-reduced-motion:reduce){
-
-    *{
-        scroll-behavior:auto !important;
-        transition:none !important;
-    }
+.send button{
+border:0;
+padding:0 20px;
+border-radius:15px;
+background:#2563eb;
+color:white
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
+<!-- LOGIN -->
 
-    <div class="header-top">
+<div class="login" id="login">
 
-        <div class="badge">
-            PEDRO BOK
-        </div>
+<div class="box">
 
-        <div class="logo">
-            <span>BOK</span>
-        </div>
+<div class="logo">SocialX</div>
 
-    </div>
+<div class="sub">
+تواصل • تحدث • شارك
+</div>
 
-    <h1>PEDRO BOK</h1>
+<button class="google" onclick="login()">
+🔐 الدخول بحساب Google
+</button>
 
-    <p>
-        خدمات الحسابات وشحن الرصيد
-    </p>
+</div>
+
+</div>
+
+
+<!-- APP -->
+
+<div class="app" id="app">
+
+<header class="top">
+
+<div class="me">
+
+<img class="avatar" id="myPhoto">
+
+<b id="myName">أنت</b>
+
+</div>
+
+<button class="logout" onclick="logout()">
+خروج
+</button>
 
 </header>
 
-<main class="container">
 
-    <section class="welcome">
+<main class="content">
 
-        <div class="welcome-icon">
-            ₱
-        </div>
+<input
+class="search"
+id="search"
+placeholder="🔎 ابحث عن شخص..."
+oninput="searchUsers()"
+>
 
-        <h2>
-            أهلاً بك في PEDRO BOK
-        </h2>
+<div class="section">
+الأشخاص
+</div>
 
-        <p>
-            اختر الخدمة التي تريدها، ثم أرسل طلبك
-            مباشرة إلى فريق PEDRO.
-        </p>
-
-    </section>
-
-
-    <h2 class="section-title">
-        الخدمات
-    </h2>
-
-    <p class="section-subtitle">
-        اختر الخدمة المناسبة لك
-    </p>
-
-
-    <div class="services">
-
-        <div class="service" onclick="openTelegram('فتح حساب جديد')">
-
-            <div class="service-icon">
-                👤
-            </div>
-
-            <h3>
-                فتح حساب جديد
-            </h3>
-
-            <p>
-                إنشاء حساب جديد في الخدمة
-            </p>
-
-        </div>
-
-
-        <div class="service" onclick="scrollToRecharge()">
-
-            <div class="service-icon">
-                💳
-            </div>
-
-            <h3>
-                شحن الرصيد
-            </h3>
-
-            <p>
-                اختر قيمة الرصيد المطلوبة
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <h2 class="section-title">
-        فتح حساب جديد
-    </h2>
-
-    <p class="section-subtitle">
-        رسوم إنشاء الحساب
-    </p>
-
-
-    <div class="account-card">
-
-        <div class="account-top">
-
-            <div class="account-icon">
-                👤
-            </div>
-
-            <div>
-
-                <h3>
-                    حساب PEDRO BOK
-                </h3>
-
-                <p>
-                    فتح حساب جديد
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="price">
-
-            <strong>
-                15,000
-            </strong>
-
-            <span>
-                جنيه سوداني
-            </span>
-
-        </div>
-
-
-        <a
-            class="order-btn"
-            href="https://t.me/PEDRO_DARKk"
-            target="_blank"
-            rel="noopener">
-
-            طلب فتح الحساب
-
-        </a>
-
-    </div>
-
-
-    <h2
-        id="recharge"
-        class="section-title">
-
-        شحن الرصيد
-    </h2>
-
-    <p class="section-subtitle">
-        اختر قيمة الرصيد المطلوبة
-    </p>
-
-
-    <div class="recharge-list">
-
-
-        <div
-            class="recharge"
-            onclick="openTelegram('شحن 100,000')">
-
-            <div class="recharge-icon">
-                💰
-            </div>
-
-            <div class="recharge-info">
-
-                <small>
-                    قيمة الرصيد
-                </small>
-
-                <strong>
-                    100,000 جنيه
-                </strong>
-
-            </div>
-
-            <div class="recharge-price">
-
-                <strong>
-                    10,000
-                </strong>
-
-                <span>
-                    سعر الشحن
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="recharge"
-            onclick="openTelegram('شحن 250,000')">
-
-            <div class="recharge-icon">
-                💰
-            </div>
-
-            <div class="recharge-info">
-
-                <small>
-                    قيمة الرصيد
-                </small>
-
-                <strong>
-                    250,000 جنيه
-                </strong>
-
-            </div>
-
-            <div class="recharge-price">
-
-                <strong>
-                    25,000
-                </strong>
-
-                <span>
-                    سعر الشحن
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="recharge"
-            onclick="openTelegram('شحن 500,000')">
-
-            <div class="recharge-icon">
-                💰
-            </div>
-
-            <div class="recharge-info">
-
-                <small>
-                    قيمة الرصيد
-                </small>
-
-                <strong>
-                    500,000 جنيه
-                </strong>
-
-            </div>
-
-            <div class="recharge-price">
-
-                <strong>
-                    50,000
-                </strong>
-
-                <span>
-                    سعر الشحن
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="recharge"
-            onclick="openTelegram('شحن 750,000')">
-
-            <div class="recharge-icon">
-                💰
-            </div>
-
-            <div class="recharge-info">
-
-                <small>
-                    قيمة الرصيد
-                </small>
-
-                <strong>
-                    750,000 جنيه
-                </strong>
-
-            </div>
-
-            <div class="recharge-price">
-
-                <strong>
-                    75,000
-                </strong>
-
-                <span>
-                    سعر الشحن
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="recharge"
-            onclick="openTelegram('شحن 1,000,000')">
-
-            <div class="recharge-icon">
-                💰
-            </div>
-
-            <div class="recharge-info">
-
-                <small>
-                    قيمة الرصيد
-                </small>
-
-                <strong>
-                    1,000,000 جنيه
-                </strong>
-
-            </div>
-
-            <div class="recharge-price">
-
-                <strong>
-                    100,000
-                </strong>
-
-                <span>
-                    سعر الشحن
-                </span>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <section class="telegram">
-
-        <h2>
-            تواصل مع PEDRO
-        </h2>
-
-        <p>
-            بعد اختيار الخدمة، سيتم تحويلك إلى
-            Telegram لإرسال طلبك مباشرة.
-        </p>
-
-        <a
-            class="telegram-btn"
-            href="https://t.me/PEDRO_DARKk"
-            target="_blank"
-            rel="noopener">
-
-            ✈️ التواصل عبر Telegram
-
-        </a>
-
-    </section>
-
-
-    <footer class="footer">
-
-        © 2026 PEDRO BOK
-
-        <br>
-
-        جميع الحقوق محفوظة
-
-    </footer>
+<div id="people"></div>
 
 </main>
+
+</div>
+
+
+<!-- CHAT -->
+
+<div class="chat" id="chat">
+
+<div class="chatTop">
+
+<button class="back" onclick="closeChat()">
+رجوع
+</button>
+
+<img class="avatar" id="chatPhoto">
+
+<b id="chatName"></b>
+
+</div>
+
+
+<div class="msgs" id="msgs"></div>
+
+
+<div class="send">
+
+<input
+id="message"
+placeholder="اكتب رسالة..."
+onkeydown="enterSend(event)"
+>
+
+<button onclick="send()">
+إرسال
+</button>
+
+</div>
+
+</div>
 
 
 <script>
 
-function openTelegram(service){
+let currentUser=null;
+let currentPerson=null;
 
-    var message =
-        "مرحباً PEDRO 👋%0A%0A" +
-        "أريد طلب خدمة: " +
-        encodeURIComponent(service);
 
-    window.open(
-        "https://t.me/PEDRO_DARKk?text=" + message,
-        "_blank"
-    );
+/* مستخدمين تجريبيين */
+
+const users=[
+
+{
+id:1,
+name:"محمد",
+photo:"https://i.pravatar.cc/100?img=12"
+},
+
+{
+id:2,
+name:"أحمد",
+photo:"https://i.pravatar.cc/100?img=32"
+},
+
+{
+id:3,
+name:"سارة",
+photo:"https://i.pravatar.cc/100?img=47"
+},
+
+{
+id:4,
+name:"نور",
+photo:"https://i.pravatar.cc/100?img=44"
+}
+
+];
+
+
+/* تسجيل الدخول التجريبي */
+
+function login(){
+
+currentUser={
+name:"مستخدم SocialX",
+photo:"https://i.pravatar.cc/100?img=68"
+};
+
+document.getElementById("login").style.display="none";
+document.getElementById("app").style.display="block";
+
+document.getElementById("myName").textContent=
+currentUser.name;
+
+document.getElementById("myPhoto").src=
+currentUser.photo;
+
+showUsers();
+
 }
 
 
-function scrollToRecharge(){
+/* خروج */
 
-    var section =
-        document.getElementById("recharge");
+function logout(){
 
-    if(section){
+currentUser=null;
 
-        section.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
-
-    }
+document.getElementById("app").style.display="none";
+document.getElementById("login").style.display="grid";
 
 }
+
+
+/* عرض المستخدمين */
+
+function showUsers(list=users){
+
+const box=document.getElementById("people");
+
+box.innerHTML="";
+
+list.forEach(u=>{
+
+box.innerHTML+=`
+
+<div class="person">
+
+<div class="personInfo">
+
+<img class="avatar" src="${u.photo}">
+
+<b>${u.name}</b>
+
+</div>
+
+<button
+class="chatBtn"
+onclick="openChat(${u.id})">
+دردشة
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+/* البحث */
+
+function searchUsers(){
+
+const q=
+document.getElementById("search")
+.value
+.toLowerCase();
+
+const result=
+users.filter(u=>
+u.name.toLowerCase().includes(q)
+);
+
+showUsers(result);
+
+}
+
+
+/* فتح الدردشة */
+
+function openChat(id){
+
+currentPerson=
+users.find(u=>u.id===id);
+
+document.getElementById("chat")
+.style.display="flex";
+
+document.getElementById("chatName")
+.textContent=currentPerson.name;
+
+document.getElementById("chatPhoto")
+.src=currentPerson.photo;
+
+loadMessages();
+
+}
+
+
+/* الرسائل */
+
+function key(){
+
+return "chat_"+currentPerson.id;
+
+}
+
+
+function loadMessages(){
+
+const box=document.getElementById("msgs");
+
+box.innerHTML="";
+
+const data=
+JSON.parse(localStorage.getItem(key())||"[]");
+
+data.forEach(m=>{
+
+const div=document.createElement("div");
+
+div.className=
+"msg "+(m.me?"mine":"");
+
+div.textContent=m.text;
+
+box.appendChild(div);
+
+});
+
+box.scrollTop=box.scrollHeight;
+
+}
+
+
+/* إرسال */
+
+function send(){
+
+const input=
+document.getElementById("message");
+
+const text=input.value.trim();
+
+if(!text)return;
+
+const data=
+JSON.parse(localStorage.getItem(key())||"[]");
+
+data.push({
+text:text,
+me:true
+});
+
+localStorage.setItem(
+key(),
+JSON.stringify(data)
+);
+
+input.value="";
+
+loadMessages();
+
+}
+
+
+/* Enter */
+
+function enterSend(e){
+
+if(e.key==="Enter"){
+send();
+}
+
+}
+
+
+/* إغلاق */
+
+function closeChat(){
+
+document.getElementById("chat")
+.style.display="none";
+
+currentPerson=null;
+
+}
+
+
+/* تشغيل */
+
+showUsers();
 
 </script>
 
 </body>
-  </html>
+</html>
