@@ -1,543 +1,339 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SocialX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>PED SAN | إدارة الرسائل</title>
 
 <style>
-*{box-sizing:border-box;margin:0}
-body{
-font-family:Arial,sans-serif;
-background:#080b12;color:#fff
-}
-button,input{font-family:inherit}
-
-.login{
-height:100vh;display:grid;place-items:center;padding:20px
+* {
+  box-sizing: border-box;
 }
 
-.box{
-width:100%;max-width:390px;
-background:#111722;
-border:1px solid #242d3d;
-border-radius:28px;
-padding:35px 25px;
-text-align:center;
-box-shadow:0 20px 70px #0008
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #050505, #260707, #080808);
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-.logo{
-font-size:38px;font-weight:bold;
-margin-bottom:8px
+.card {
+  width: 100%;
+  max-width: 450px;
+  padding: 25px;
+  background: rgba(18, 18, 18, 0.96);
+  border: 1px solid #492020;
+  border-radius: 22px;
+  box-shadow: 0 10px 40px #0009;
 }
 
-.sub{
-color:#8993a5;
-margin-bottom:30px
+.logo {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff3333;
+  letter-spacing: 2px;
 }
 
-.google{
-width:100%;padding:15px;
-border:0;border-radius:15px;
-background:white;color:#111;
-font-size:16px;font-weight:bold;
-cursor:pointer
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 25px;
 }
 
-.app{display:none;min-height:100vh}
-
-.top{
-height:70px;padding:10px 18px;
-display:flex;align-items:center;
-justify-content:space-between;
-border-bottom:1px solid #202938;
-background:#0c1018
+label {
+  display: block;
+  margin-top: 15px;
+  color: #ddd;
+  font-size: 14px;
 }
 
-.me{
-display:flex;align-items:center;gap:10px
+input, textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
+  color: #fff;
+  background: #191919;
+  border: 1px solid #3b3b3b;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+  font-family: inherit;
 }
 
-.avatar{
-width:43px;height:43px;
-border-radius:50%;
-object-fit:cover;
-background:#222
+input:focus, textarea:focus {
+  border-color: #e32636;
 }
 
-.logout{
-border:0;background:#191f2b;
-color:#fff;padding:10px 14px;
-border-radius:12px;cursor:pointer
+textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.7;
 }
 
-.content{
-max-width:900px;
-margin:auto;padding:20px
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #a60000, #f22);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.search{
-width:100%;
-padding:15px 18px;
-border-radius:16px;
-border:1px solid #273142;
-background:#111722;
-color:#fff;
-outline:none;
-margin-bottom:18px
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.section{
-font-size:20px;
-font-weight:bold;
-margin-bottom:14px
+.secondary {
+  background: #292929;
 }
 
-.person{
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:#111722;
-border:1px solid #202938;
-padding:13px;
-border-radius:18px;
-margin-bottom:10px
+.hidden {
+  display: none !important;
 }
 
-.personInfo{
-display:flex;
-align-items:center;
-gap:10px
+.status {
+  margin-top: 18px;
+  padding: 12px;
+  background: #202020;
+  border-radius: 10px;
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
 }
 
-.chatBtn{
-border:0;
-background:#2563eb;
-color:white;
-padding:9px 14px;
-border-radius:12px;
-cursor:pointer
-}
-
-.chat{
-display:none;
-position:fixed;
-inset:0;
-background:#080b12;
-z-index:10;
-flex-direction:column
-}
-
-.chatTop{
-height:70px;
-display:flex;
-align-items:center;
-gap:12px;
-padding:10px 15px;
-border-bottom:1px solid #202938
-}
-
-.back{
-border:0;
-background:#191f2b;
-color:#fff;
-padding:9px 13px;
-border-radius:12px;
-cursor:pointer
-}
-
-.msgs{
-flex:1;
-overflow:auto;
-padding:20px
-}
-
-.msg{
-max-width:75%;
-width:max-content;
-padding:11px 15px;
-border-radius:18px;
-background:#182130;
-margin:8px 0
-}
-
-.mine{
-margin-right:auto;
-background:#2563eb
-}
-
-.send{
-display:flex;
-gap:8px;
-padding:12px;
-border-top:1px solid #202938
-}
-
-.send input{
-flex:1;
-padding:14px;
-border:0;
-outline:none;
-border-radius:15px;
-background:#111722;
-color:#fff
-}
-
-.send button{
-border:0;
-padding:0 20px;
-border-radius:15px;
-background:#2563eb;
-color:white
+.hint {
+  margin-top: 18px;
+  color: #888;
+  text-align: center;
+  font-size: 12px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
+<div class="card">
 
-<div class="login" id="login">
+  <div class="logo">PED SAN</div>
+  <div class="subtitle">لوحة إدارة الرسائل</div>
 
-<div class="box">
+  <div id="loginBox">
 
-<div class="logo">SocialX</div>
+    <label for="email">البريد الإلكتروني للمدير</label>
+    <input
+      id="email"
+      type="email"
+      autocomplete="username"
+      placeholder="أدخل البريد الإلكتروني">
 
-<div class="sub">
-تواصل • تحدث • شارك
-</div>
+    <label for="password">كلمة المرور</label>
+    <input
+      id="password"
+      type="password"
+      autocomplete="current-password"
+      placeholder="أدخل كلمة المرور">
 
-<button class="google" onclick="login()">
-🔐 الدخول بحساب Google
-</button>
+    <button id="loginBtn">تسجيل الدخول</button>
 
-</div>
+  </div>
 
-</div>
+  <div id="sendBox" class="hidden">
 
+    <label for="title">عنوان الرسالة</label>
+    <input
+      id="title"
+      type="text"
+      maxlength="100"
+      value="يوجد تحديث">
 
-<!-- APP -->
+    <label for="message">محتوى الرسالة</label>
+    <textarea
+      id="message"
+      maxlength="5000"
+      placeholder="اكتب الرسالة هنا..."></textarea>
 
-<div class="app" id="app">
+    <button id="sendBtn">إرسال الرسالة</button>
 
-<header class="top">
+    <button id="logoutBtn" class="secondary">
+      تسجيل الخروج
+    </button>
 
-<div class="me">
+  </div>
 
-<img class="avatar" id="myPhoto">
+  <div id="status" class="status">
+    جاهز للاستخدام.
+  </div>
 
-<b id="myName">أنت</b>
-
-</div>
-
-<button class="logout" onclick="logout()">
-خروج
-</button>
-
-</header>
-
-
-<main class="content">
-
-<input
-class="search"
-id="search"
-placeholder="🔎 ابحث عن شخص..."
-oninput="searchUsers()"
->
-
-<div class="section">
-الأشخاص
-</div>
-
-<div id="people"></div>
-
-</main>
+  <div class="hint">
+    PED SAN — نظام إدارة الرسائل
+  </div>
 
 </div>
 
-
-<!-- CHAT -->
-
-<div class="chat" id="chat">
-
-<div class="chatTop">
-
-<button class="back" onclick="closeChat()">
-رجوع
-</button>
-
-<img class="avatar" id="chatPhoto">
-
-<b id="chatName"></b>
-
-</div>
-
-
-<div class="msgs" id="msgs"></div>
-
-
-<div class="send">
-
-<input
-id="message"
-placeholder="اكتب رسالة..."
-onkeydown="enterSend(event)"
->
-
-<button onclick="send()">
-إرسال
-</button>
-
-</div>
-
-</div>
-
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 
 <script>
-
-let currentUser=null;
-let currentPerson=null;
-
-
-/* مستخدمين تجريبيين */
-
-const users=[
-
-{
-id:1,
-name:"محمد",
-photo:"https://i.pravatar.cc/100?img=12"
-},
-
-{
-id:2,
-name:"أحمد",
-photo:"https://i.pravatar.cc/100?img=32"
-},
-
-{
-id:3,
-name:"سارة",
-photo:"https://i.pravatar.cc/100?img=47"
-},
-
-{
-id:4,
-name:"نور",
-photo:"https://i.pravatar.cc/100?img=44"
-}
-
-];
-
-
-/* تسجيل الدخول التجريبي */
-
-function login(){
-
-currentUser={
-name:"مستخدم SocialX",
-photo:"https://i.pravatar.cc/100?img=68"
-};
-
-document.getElementById("login").style.display="none";
-document.getElementById("app").style.display="block";
-
-document.getElementById("myName").textContent=
-currentUser.name;
-
-document.getElementById("myPhoto").src=
-currentUser.photo;
-
-showUsers();
-
-}
-
-
-/* خروج */
-
-function logout(){
-
-currentUser=null;
-
-document.getElementById("app").style.display="none";
-document.getElementById("login").style.display="grid";
-
-}
-
-
-/* عرض المستخدمين */
-
-function showUsers(list=users){
-
-const box=document.getElementById("people");
-
-box.innerHTML="";
-
-list.forEach(u=>{
-
-box.innerHTML+=`
-
-<div class="person">
-
-<div class="personInfo">
-
-<img class="avatar" src="${u.photo}">
-
-<b>${u.name}</b>
-
-</div>
-
-<button
-class="chatBtn"
-onclick="openChat(${u.id})">
-دردشة
-</button>
-
-</div>
-
-`;
-
-});
-
-}
-
-
-/* البحث */
-
-function searchUsers(){
-
-const q=
-document.getElementById("search")
-.value
-.toLowerCase();
-
-const result=
-users.filter(u=>
-u.name.toLowerCase().includes(q)
-);
-
-showUsers(result);
-
-}
-
-
-/* فتح الدردشة */
-
-function openChat(id){
-
-currentPerson=
-users.find(u=>u.id===id);
-
-document.getElementById("chat")
-.style.display="flex";
-
-document.getElementById("chatName")
-.textContent=currentPerson.name;
-
-document.getElementById("chatPhoto")
-.src=currentPerson.photo;
-
-loadMessages();
-
-}
-
-
-/* الرسائل */
-
-function key(){
-
-return "chat_"+currentPerson.id;
-
-}
-
-
-function loadMessages(){
-
-const box=document.getElementById("msgs");
-
-box.innerHTML="";
-
-const data=
-JSON.parse(localStorage.getItem(key())||"[]");
-
-data.forEach(m=>{
-
-const div=document.createElement("div");
-
-div.className=
-"msg "+(m.me?"mine":"");
-
-div.textContent=m.text;
-
-box.appendChild(div);
-
-});
-
-box.scrollTop=box.scrollHeight;
-
-}
-
-
-/* إرسال */
-
-function send(){
-
-const input=
-document.getElementById("message");
-
-const text=input.value.trim();
-
-if(!text)return;
-
-const data=
-JSON.parse(localStorage.getItem(key())||"[]");
-
-data.push({
-text:text,
-me:true
-});
-
-localStorage.setItem(
-key(),
-JSON.stringify(data)
-);
-
-input.value="";
-
-loadMessages();
-
-}
-
-
-/* Enter */
-
-function enterSend(e){
-
-if(e.key==="Enter"){
-send();
-}
-
-}
-
-
-/* إغلاق */
-
-function closeChat(){
-
-document.getElementById("chat")
-.style.display="none";
-
-currentPerson=null;
-
-}
-
-
-/* تشغيل */
-
-showUsers();
-
+(function () {
+  "use strict";
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyC393Ko1pqXlXQGP3iyoXau9zDm8JLlQUA",
+    authDomain: "ped-37b14.firebaseapp.com",
+    databaseURL: "https://ped-37b14-default-rtdb.firebaseio.com",
+    projectId: "ped-37b14",
+    storageBucket: "ped-37b14.firebasestorage.app",
+    messagingSenderId: "816967461547",
+    appId: "1:816967461547:web:a08a820772b3212f6b65ee",
+    measurementId: "G-60WPS80C8Q"
+  };
+
+  var loginBox = document.getElementById("loginBox");
+  var sendBox = document.getElementById("sendBox");
+  var emailInput = document.getElementById("email");
+  var passwordInput = document.getElementById("password");
+  var titleInput = document.getElementById("title");
+  var messageInput = document.getElementById("message");
+  var loginBtn = document.getElementById("loginBtn");
+  var sendBtn = document.getElementById("sendBtn");
+  var logoutBtn = document.getElementById("logoutBtn");
+  var statusBox = document.getElementById("status");
+
+  function setStatus(message) {
+    statusBox.textContent = message;
+  }
+
+  if (!window.firebase) {
+    setStatus("تعذر تحميل Firebase. تحقق من اتصال الإنترنت.");
+    loginBtn.disabled = true;
+    return;
+  }
+
+  try {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+  } catch (error) {
+    setStatus("تعذر تهيئة Firebase: " + error.message);
+    return;
+  }
+
+  var auth = firebase.auth();
+  var database = firebase.database();
+  var sending = false;
+
+  auth.onAuthStateChanged(function (user) {
+    if (user) {
+      loginBox.classList.add("hidden");
+      sendBox.classList.remove("hidden");
+      setStatus("تم تسجيل الدخول. يمكنك إرسال الرسائل.");
+    } else {
+      loginBox.classList.remove("hidden");
+      sendBox.classList.add("hidden");
+      setStatus("سجّل الدخول بحساب المدير للمتابعة.");
+    }
+  });
+
+  loginBtn.onclick = function () {
+    var email = emailInput.value.trim();
+    var password = passwordInput.value;
+
+    if (!email || !password) {
+      setStatus("أدخل البريد الإلكتروني وكلمة المرور.");
+      return;
+    }
+
+    loginBtn.disabled = true;
+    setStatus("جارٍ تسجيل الدخول...");
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then(function () {
+        passwordInput.value = "";
+        setStatus("تم تسجيل الدخول بنجاح.");
+      })
+      .catch(function (error) {
+        setStatus("فشل تسجيل الدخول: " + error.message);
+      })
+      .then(function () {
+        loginBtn.disabled = false;
+      });
+  };
+
+  sendBtn.onclick = function () {
+    if (sending) return;
+
+    var user = auth.currentUser;
+    var title = titleInput.value.trim();
+    var message = messageInput.value.trim();
+
+    if (!user) {
+      setStatus("انتهت جلسة الدخول. سجّل الدخول مرة أخرى.");
+      return;
+    }
+
+    if (!title || !message) {
+      setStatus("اكتب عنوان الرسالة ومحتواها.");
+      return;
+    }
+
+    if (title.length > 100 || message.length > 5000) {
+      setStatus("الرسالة أطول من الحد المسموح.");
+      return;
+    }
+
+    sending = true;
+    sendBtn.disabled = true;
+    setStatus("جارٍ حفظ الرسالة في Firebase...");
+
+    database.ref("messages").push({
+      title: title,
+      message: message,
+      createdAt: firebase.database.ServerValue.TIMESTAMP
+    })
+    .then(function () {
+      messageInput.value = "";
+      setStatus("تم إرسال الرسالة وحفظها بنجاح.");
+    })
+    .catch(function (error) {
+      setStatus("تعذر الإرسال: " + error.message);
+    })
+    .then(function () {
+      sending = false;
+      sendBtn.disabled = false;
+    });
+  };
+
+  logoutBtn.onclick = function () {
+    logoutBtn.disabled = true;
+
+    auth.signOut()
+      .then(function () {
+        setStatus("تم تسجيل الخروج.");
+      })
+      .catch(function (error) {
+        setStatus("تعذر تسجيل الخروج: " + error.message);
+      })
+      .then(function () {
+        logoutBtn.disabled = false;
+      });
+  };
+
+})();
 </script>
 
 </body>
